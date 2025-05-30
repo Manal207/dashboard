@@ -3,6 +3,8 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import SearchIcon from '@mui/icons-material/Search';
+import { InputAdornment} from '@mui/material';
 import {
   Box,
   Table,
@@ -195,17 +197,32 @@ function MontureTable({ montures, onEdit, onDelete }) {
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <Toolbar>
-          <Typography sx={{ flex: '1 1 100%' }} variant="h6" component="div">
+        <Toolbar sx={{ padding:4 }}>
+
+          {/* <Typography sx={{ flex: '1 1 100%' }} variant="h6" component="div">
             Montures
-          </Typography>
+          </Typography> */}
           <TextField
             variant="outlined"
             size="small"
             placeholder="Rechercher..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            sx={{ ml: 2 }}
+            sx={{
+              // mt: 2,       // margin-top outside the field
+              // ml: 2,       // margin-left outside the field
+              width: 350,
+              '& .MuiOutlinedInput-root': {
+                height: 55,  // set input height
+              },
+            }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
           />
           {selected.length > 0 && (
             <Tooltip title="Supprimer la sélection">
