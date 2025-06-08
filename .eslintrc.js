@@ -1,9 +1,13 @@
 module.exports = {
-  // your existing config
+  extends: [
+    'react-app',
+    'react-app/jest'
+  ],
+  plugins: ['react-hooks'],
   rules: {
-    // disable the problematic rules temporarily
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn', // change to warn instead of error
     'no-unused-vars': 'warn',
-    'react-hooks/exhaustive-deps': 'warn',
     'default-case': 'warn'
   }
 }
