@@ -1,18 +1,13 @@
 // src/api/montureApi.js
-import axios from 'axios';
+import axios from './axiosConfig'; // Change this import
 
-const API_URL = 'http://localhost:8080';
-console.log('Using API URL:', API_URL);
-
-// export const fetchAllMontures = async () => {
-//   const response = await axios.get(`${API_URL}/monture/all`);
-//   return response.data;
-// };
+// Remove the base URL
+// const API_URL = 'http://localhost:8080'; // Remove this
 
 export const fetchAllMontures = async () => {
   try {
-    console.log('Fetching montures from:', `${API_URL}/monture/all`);
-    const response = await axios.get(`${API_URL}/monture/all`);
+    console.log('Fetching montures...');
+    const response = await axios.get('/monture/all'); // Use relative URL
     console.log('Montures received:', response.data);
     return response.data;
   } catch (error) {
@@ -22,20 +17,62 @@ export const fetchAllMontures = async () => {
 };
 
 export const fetchMontureById = async (id) => {
-  const response = await axios.get(`${API_URL}/monture/find/${id}`);
+  const response = await axios.get(`/monture/find/${id}`);
   return response.data;
 };
 
 export const createMonture = async (monture) => {
-  const response = await axios.post(`${API_URL}/monture/add`, monture);
+  const response = await axios.post('/monture/add', monture);
   return response.data;
 };
 
 export const updateMonture = async (monture) => {
-  const response = await axios.put(`${API_URL}/monture/update`, monture);
+  const response = await axios.put('/monture/update', monture);
   return response.data;
 };
 
 export const deleteMonture = async (id) => {
-  await axios.delete(`${API_URL}/monture/delete/${id}`);
+  await axios.delete(`/monture/delete/${id}`);
 };
+
+// // src/api/montureApi.js
+// import axios from 'axios';
+
+// const API_URL = 'http://localhost:8080';
+// console.log('Using API URL:', API_URL);
+
+// // export const fetchAllMontures = async () => {
+// //   const response = await axios.get(`${API_URL}/monture/all`);
+// //   return response.data;
+// // };
+
+// export const fetchAllMontures = async () => {
+//   try {
+//     console.log('Fetching montures from:', `${API_URL}/monture/all`);
+//     const response = await axios.get(`${API_URL}/monture/all`);
+//     console.log('Montures received:', response.data);
+//     return response.data;
+//   } catch (error) {
+//     console.error('Error fetching montures:', error);
+//     throw error;
+//   }
+// };
+
+// export const fetchMontureById = async (id) => {
+//   const response = await axios.get(`${API_URL}/monture/find/${id}`);
+//   return response.data;
+// };
+
+// export const createMonture = async (monture) => {
+//   const response = await axios.post(`${API_URL}/monture/add`, monture);
+//   return response.data;
+// };
+
+// export const updateMonture = async (monture) => {
+//   const response = await axios.put(`${API_URL}/monture/update`, monture);
+//   return response.data;
+// };
+
+// export const deleteMonture = async (id) => {
+//   await axios.delete(`${API_URL}/monture/delete/${id}`);
+// };

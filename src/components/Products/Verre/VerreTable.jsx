@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SearchIcon from '@mui/icons-material/Search';
 import { InputAdornment } from '@mui/material';
+import CheckIcon from '@mui/icons-material/Check';
+
 import {
   Box,
   Table,
@@ -77,7 +79,7 @@ const EnhancedTableHead = ({ order, orderBy, onRequestSort, onSelectAllClick, ro
   };
 
   return (
-    <TableHead>
+    <TableHead sx={{ backgroundColor: '#F4F6F8' }}>
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -86,6 +88,10 @@ const EnhancedTableHead = ({ order, orderBy, onRequestSort, onSelectAllClick, ro
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
             inputProps={{ 'aria-label': 'select all verres' }}
+            icon={<Box sx={{ width: 20, height: 20, borderRadius: '6px', border: '2px solid #cfd8dc', backgroundColor: '#fff',}}/>}
+            checkedIcon={<Box sx={{ width: 20, height: 20, borderRadius: '6px', border: '2px solid #1976d2', backgroundColor: '#1976d2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff'}}><CheckIcon sx={{ fontSize: 16 }} /></Box>}
+            indeterminateIcon={<Box sx={{ width: 20, height: 20, borderRadius: '6px', border: '2px solid #1976d2', backgroundColor: '#1976d2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff'}}><Box sx={{width: 12, height: 2, backgroundColor: 'white', borderRadius: 1}}/></Box>}
+
           />
         </TableCell>
         {headCells.map((headCell) => (
@@ -204,7 +210,7 @@ const VerreTable = ({ verres, onEdit, onDelete }) => {
 
   return (
        <Box sx={{ width: '100%' }}>
-      <Paper sx={{ width: '100%', mb: 2 }}>
+      <Paper sx={{ width: '100%', mb: 2, borderRadius:'16px' , boxShadow: '0 0 2px 0 rgba(145, 158, 171, 0.2), 0 12px 24px -4px rgba(145, 158, 171, 0.12)'}}>
         <Toolbar sx={{ padding: 4 }}>
           <TextField
             variant="outlined"
@@ -215,6 +221,7 @@ const VerreTable = ({ verres, onEdit, onDelete }) => {
             sx={{
               width: 350,
               '& .MuiOutlinedInput-root': {
+                borderRadius: '8px',
                 height: 55,
               },
             }}
@@ -270,6 +277,8 @@ const VerreTable = ({ verres, onEdit, onDelete }) => {
                           checked={isItemSelected}
                           onChange={() => handleClick(row.id)}
                           inputProps={{ 'aria-labelledby': `verre-${row.id}` }}
+                          icon={<Box sx={{ width: 20, height: 20, borderRadius: '6px', border: '2px solid #cfd8dc', backgroundColor: '#fff',}}/>}
+                          checkedIcon={<Box sx={{ width: 20, height: 20, borderRadius: '6px', border: '2px solid #1976d2', backgroundColor: '#1976d2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff'}}><CheckIcon sx={{ fontSize: 16 }} /></Box>}
                         />
                       </TableCell>
                       <TableCell>{displayValue(row.nom)}</TableCell>

@@ -1,76 +1,70 @@
-// src/components/Verre.jsx
+// src/components/Magasin.jsx
 import React, { useState, useEffect } from 'react';
 
 import DeleteConfirmation from './DeleteConfirmation';
-import { fetchAllVerres, deleteVerre } from '../../../api/verreApi';
-import '../../Dashboard.css';
+import { fetchAllMagasins } from '../../../../api/magasinApi';
+import { deleteMagasin } from '../../../../api/magasinApi';
+import '../../../Dashboard.css';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 
 import Typography from '@mui/material/Typography';
-import VerreTable from './VerreTable';
-import VerreForm from './VerreForm';
+import MagasinTable from './MagasinTable';
+import MagasinForm from './MagasinForm';
 
-function Verre() {
-  const [verres, setVerres] = useState([]);
+function Magasin() {
+  const [magasins, setMagasins] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
-  const [currentVerre, setCurrentVerre] = useState(null);
+  const [currentMagasin, setCurrentMagasin] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [verreToDelete, setVerreToDelete] = useState(null);
-
-  
+  const [magasinToDelete, setMagasinToDelete] = useState(null);
 
   useEffect(() => {
-    loadVerres();
+    loadMagasins();
   }, []);
 
-  const loadVerres = async () => {
+  const loadMagasins = async () => {
     try {
       setLoading(true);
-      const data = await fetchAllVerres();
-      setVerres(data);
+      const data = await fetchAllMagasins();
+      setMagasins(data);
     } catch (error) {
-      console.error('Error loading verres:', error);
+      console.error('Error loading magasins:', error);
     } finally {
       setLoading(false);
     }
   };
 
   const handleAddNew = () => {
-    setCurrentVerre(null);
+    setCurrentMagasin(null);
     setShowForm(true);
   };
 
-  const handleEdit = (verre) => {
-    setCurrentVerre(verre);
+  const handleEdit = (magasin) => {
+    setCurrentMagasin(magasin);
     setShowForm(true);
   };
 
-  const handleDelete = (verre) => {
-    setVerreToDelete(verre);
+  const handleDelete = (magasin) => {
+    setMagasinToDelete(magasin);
     setShowDeleteModal(true);
   };
 
   const confirmDelete = async () => {
     try {
-      await deleteVerre(verreToDelete.id);
+      await deleteMagasin(magasinToDelete.id);
       setShowDeleteModal(false);
-      loadVerres();
+      loadMagasins();
     } catch (error) {
-      console.error('Error deleting verre:', error);
+      console.error('Error deleting magasin:', error);
     }
   };
 
   const handleFormSubmitSuccess = () => {
     setShowForm(false);
-    loadVerres();
+    loadMagasins();
   };
-
-    console.log('VerreTable:', VerreTable);
-      console.log('VerreForm:', VerreForm);
-
-
 
   return (
     <div className="dashboard-container">
@@ -86,13 +80,13 @@ function Verre() {
             letterSpacing: '0.75px', // 👈 Add this line
           }}
         >
-          Verres
+          Magasins
         </Typography>
 
         <Button
           variant="contained"
           onClick={handleAddNew}
-          startIcon={<AddIcon sx={{ color: 'white'}} />}
+          startIcon={<AddIcon sx={{ color: 'white' }} />}
           sx={{
             textTransform: 'none',
             backgroundColor: 'black',
@@ -113,15 +107,15 @@ function Verre() {
       {loading ? (
         <div className="loading">Chargement...</div>
       ) : (
-        <VerreTable 
-          verres={verres} 
-          onEdit={handleEdit} 
-          onDelete={handleDelete} 
+        <MagasinTable
+          magasins={magasins}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
         />
       )}
 
-      <VerreForm
-        verre={currentVerre}
+      <MagasinForm
+        magasin={currentMagasin}
         open={showForm}
         onClose={() => setShowForm(false)}
         onSubmitSuccess={handleFormSubmitSuccess}
@@ -129,7 +123,7 @@ function Verre() {
 
       {showDeleteModal && (
         <DeleteConfirmation
-          verre={verreToDelete}
+          magasin={magasinToDelete}
           open={showDeleteModal}
           onConfirm={confirmDelete}
           onCancel={() => setShowDeleteModal(false)}
@@ -139,4 +133,4 @@ function Verre() {
   );
 }
 
-export default Verre;
+export default Magasin;

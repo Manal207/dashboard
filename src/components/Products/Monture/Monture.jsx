@@ -84,6 +84,9 @@ function Monture() {
             lineHeight: 1.5,
             WebkitBoxFlex: 1,
             flexGrow: 1,
+            letterSpacing: '0.75px', // 👈 Add this line
+
+            
           }}
         >
           Montures
@@ -108,6 +111,10 @@ function Monture() {
           sx={{
             textTransform: 'none',  // <-- This disables uppercase transform
             backgroundColor: 'black',
+            borderRadius: '8px',
+            fontWeight: 700,
+            fontSize: '0.875rem',
+            lineHeight: 1.71429,
             color: 'white',
             '&:hover': {
               backgroundColor: '#333', // a slightly lighter black on hover

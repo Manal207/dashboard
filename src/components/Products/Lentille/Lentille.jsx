@@ -77,6 +77,8 @@ function Lentille() {
             lineHeight: 1.5,
             WebkitBoxFlex: 1,
             flexGrow: 1,
+            letterSpacing: '0.75px', // 👈 Add this line
+
           }}
         >
           Lentilles
@@ -89,7 +91,11 @@ function Lentille() {
           sx={{
             textTransform: 'none',
             backgroundColor: 'black',
+            borderRadius: '8px',
             color: 'white',
+            fontWeight: 700,
+            fontSize: '0.875rem',
+            lineHeight: 1.71429,
             '&:hover': {
               backgroundColor: '#333',
             },
