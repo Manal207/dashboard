@@ -20,8 +20,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+// import VisibilityIcon from '@mui/icons-material/Visibility';
+// import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 
 import FicheForm from './FicheForm';
 
