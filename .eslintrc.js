@@ -1,13 +1,8 @@
 module.exports = {
-  extends: [
-    'react-app',
-    'react-app/jest'
-  ],
-  plugins: ['react-hooks'],
+  extends: ['react-app'],
   rules: {
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn', // change to warn instead of error
-    'no-unused-vars': 'warn',
+    'react-hooks/exhaustive-deps': 'warn',
+    'no-unused-vars': 'warn', 
     'default-case': 'warn'
   }
 }
