@@ -398,7 +398,10 @@ function ProductSelector({ open, type, onClose, onSelect }) {
                     <Typography variant="body2" color="text.secondary">
                       Prix de vente recommandé
                     </Typography>
-                    <Typography variant="h5" fontWeight={700} color="text.secondary" sx={{ textDecoration: 'line-through' }}>
+                    <Typography variant="h5" fontWeight={700} color="text.secondary" 
+                    sx={{ 
+                      // textDecoration: 'line-through' 
+                      }}>
                       {selectedProduct.prixVente?.toFixed(2)} DH
                     </Typography>
                     

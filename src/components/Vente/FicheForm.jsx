@@ -229,7 +229,7 @@ function FicheForm({ onAddFiche, editMode = false, initialData = null }) {
           <Typography variant="subtitle2" color="text.secondary">
             Monture
           </Typography>
-          <VisibilityIcon fontSize="small" color="action" />
+          {/* <VisibilityIcon fontSize="small" color="action" /> */}
         </Box>
         {ficheData.montureNom ? (
           <Box>
@@ -276,7 +276,7 @@ function FicheForm({ onAddFiche, editMode = false, initialData = null }) {
             <Typography variant="subtitle2" color="text.secondary">
               Verre Œil Droit
             </Typography>
-            <VisibilityIcon fontSize="small" color="action" />
+            {/* <VisibilityIcon fontSize="small" color="action" /> */}
           </Box>
           {ficheData.verreODNom ? (
             <Box>
@@ -370,7 +370,7 @@ function FicheForm({ onAddFiche, editMode = false, initialData = null }) {
             <Typography variant="subtitle2" color="text.secondary">
               Verre Œil Gauche
             </Typography>
-            <VisibilityIcon fontSize="small" color="action" />
+            {/* <VisibilityIcon fontSize="small" color="action" /> */}
           </Box>
           {ficheData.verreOGNom ? (
             <Box>
