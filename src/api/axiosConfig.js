@@ -1,15 +1,16 @@
 import axios from 'axios';
 
 // Set base URL based on environment
-// const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 // const API_BASE_URL = process.env.REACT_APP_API_URL ;
 
 // Temporarily point to Railway for testing
-axios.defaults.baseURL = 'https://dashboardbackend-production-8fde.up.railway.app';
+// axios.defaults.baseURL = 'https://dashboardbackend-production-8fde.up.railway.app';
 
 
 
-// axios.defaults.baseURL = API_BASE_URL;
+
+axios.defaults.baseURL = API_BASE_URL;
 
 // // Log the environment for debugging
 // console.log('Environment:', process.env.REACT_APP_ENV);
