@@ -260,7 +260,7 @@ const AccessoireTable = ({ accessoires, onEdit, onDelete }) => {
                       <TableCell>{displayValue(row.marque)}</TableCell>
                       <TableCell>{displayValue(row.nature)}</TableCell>
                       <TableCell>{displayValue(row.quantiteStock)}</TableCell>
-                      <TableCell>{`${displayValue(row.prixVente)} €`}</TableCell>
+                      <TableCell>{`${displayValue(row.prixVente)} MAD`}</TableCell>
                       <TableCell>
                         <Tooltip title="Modifier">
                           <IconButton

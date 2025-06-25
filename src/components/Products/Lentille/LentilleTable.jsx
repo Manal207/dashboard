@@ -532,7 +532,7 @@ const LentilleTable = ({ lentilles, onEdit, onDelete }) => {
                           <TableCell>{displayValue(row.modele)}</TableCell>
                           <TableCell>{displayValue(row.matiere)}</TableCell>
                           <TableCell>{displayValue(row.duree)}</TableCell>
-                          <TableCell>{`${displayValue(row.prixVente)} €`}</TableCell>
+                          <TableCell>{`${displayValue(row.prixVente)} MAD`}</TableCell>
                         </>
                       )}
                       

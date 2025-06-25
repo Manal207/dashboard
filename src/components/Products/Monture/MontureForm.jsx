@@ -318,7 +318,7 @@ function MontureForm({ monture, onClose, onSubmitSuccess, open }) {
 
           <TextField
             margin="dense"
-            label="Prix d'achat (€)"
+            label="Prix d'achat (MAD)"
             name="prixAchat"
             type="number"
             step="0.01"
@@ -329,7 +329,7 @@ function MontureForm({ monture, onClose, onSubmitSuccess, open }) {
 
           <TextField
             margin="dense"
-            label="Prix de vente (€)*"
+            label="Prix de vente (MAD)*"
             name="prixVente"
             type="number"
             step="0.01"

@@ -606,7 +606,7 @@ function MontureTable({ montures, onEdit, onDelete }) {
                         <TableCell>{displayValue(monture.genre)}</TableCell>
                         <TableCell>{displayValue(monture.forme)}</TableCell>
                         <TableCell>{displayValue(monture.matiere)}</TableCell>
-                        <TableCell>{displayValue(monture.prixVente, 0)} €</TableCell>
+                        <TableCell>{displayValue(monture.prixVente, 0)} MAD</TableCell>
                         <TableCell>{displayValue(monture.quantiteInitiale, 0)}</TableCell>
                       </>
                     )}

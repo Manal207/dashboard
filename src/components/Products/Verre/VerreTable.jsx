@@ -286,7 +286,7 @@ const VerreTable = ({ verres, onEdit, onDelete }) => {
                       <TableCell>{displayValue(row.nature)}</TableCell>
                       <TableCell>{displayValue(row.indice)}</TableCell>
                       <TableCell>{displayValue(row.foyer)}</TableCell>
-                      <TableCell>{`${displayValue(row.prixVente)} €`}</TableCell>
+                      <TableCell>{`${displayValue(row.prixVente)} MAD`}</TableCell>
                       <TableCell>
                         <Tooltip title="Modifier">
                           <IconButton
