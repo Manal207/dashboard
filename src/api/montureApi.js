@@ -79,7 +79,8 @@ export const getImageUrl = (filename) => {
     return null;
   }
   // Use the controller endpoint - NOT /uploads/images/
-  const url = `http://localhost:8080/monture/images/${filename}`;
+  // const url = `http://localhost:8080/monture/images/${filename}`;
+  const url = `https://dashboardbackend-production-8fde.up.railway.app/monture/images/${filename}`;
   console.log('Generated image URL:', url);
   return url;
 };
